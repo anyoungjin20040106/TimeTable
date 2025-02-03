@@ -1,0 +1,86 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25학번 1학기 시간표</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+  
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; /* 열 너비 고정 */
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 테이블 그림자 */
+    }
+  
+  th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+  } td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+    }
+  
+    th {
+      background-color: #3d0454;
+      color: white;
+      font-weight: bold;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2; /* 짝수 줄 배경색 */
+    }
+  
+    td:hover {
+      background-color: #f4e9f5; /* 마우스 오버 시 색 변경 */
+    }
+  
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block; /* 모바일 화면에서 블록 형태로 변경 */
+      }
+  
+      th {
+        position: sticky;
+        top: 0;
+        background-color: #3d0454;
+        z-index: 2;
+      }
+  
+      td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+      }
+  
+      td::before {
+        content: attr(data-label); /* 각 셀에 제목 추가 */
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: bold;
+      }
+    }
+  </style>
+  
+  <body>
+    {{ table | safe }}
+  </body>
+  </html>

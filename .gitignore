@@ -1,0 +1,6 @@
+*
+!*.py
+!*.txt
+!templates/
+!templates/**
+!.gitignore
